@@ -1,0 +1,76 @@
+@startuml
+hide methods
+hide stereotypes
+skinparam linetype ortho
+
+entity "dim_customer" as dim_customer {
+  *customer_key : INT <<PK>>
+  --
+  customer_id : INT
+  company_name : VARCHAR
+  industry : VARCHAR
+  company_size : VARCHAR
+  country : VARCHAR
+  signup_date : DATE
+}
+
+entity "dim_plan" as dim_plan {
+  *plan_key : INT <<PK>>
+  --
+  plan_id : INT
+  plan_name : VARCHAR
+  monthly_price : NUMERIC
+}
+
+entity "dim_date" as dim_date {
+  *date_key : INT <<PK>>
+  --
+  full_date : DATE
+  year : INT
+  quarter : INT
+  month : INT
+  month_name : VARCHAR
+  week : INT
+  day : INT
+}
+
+entity "fact_payments" as fact_payments {
+  *payment_key : INT <<PK>>
+  --
+  payment_id : INT
+  customer_key : INT <<FK>>
+  date_key : INT <<FK>>
+  amount : NUMERIC
+  payment_status : VARCHAR
+}
+
+entity "fact_feature_usage" as fact_feature_usage {
+  *usage_key : INT <<PK>>
+  --
+  usage_id : INT
+  customer_key : INT <<FK>>
+  date_key : INT <<FK>>
+  feature_name : VARCHAR
+  usage_count : INT
+}
+
+entity "fact_support_tickets" as fact_support_tickets {
+  *ticket_key : INT <<PK>>
+  --
+  ticket_id : INT
+  customer_key : INT <<FK>>
+  date_key : INT <<FK>>
+  priority : VARCHAR
+  status : VARCHAR
+}
+
+dim_customer ||--o{ fact_payments
+dim_date ||--o{ fact_payments
+
+dim_customer ||--o{ fact_feature_usage
+dim_date ||--o{ fact_feature_usage
+
+dim_customer ||--o{ fact_support_tickets
+dim_date ||--o{ fact_support_tickets
+
+@enduml
