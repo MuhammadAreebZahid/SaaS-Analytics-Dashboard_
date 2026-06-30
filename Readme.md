@@ -176,11 +176,11 @@ Potential future enhancements include:
 
 **Areeb Zahid**
 
-Business Analytics Student | Data Analytics Enthusiast
+Business Analytics | Data Analytics Enthusiast
 
-GitHub: *(Add your GitHub profile)*
+GitHub: MuhammadAreebZahid
 
-LinkedIn: *(Add your LinkedIn profile)*
+LinkedIn: Areeb Zahid
 
 ---
 
