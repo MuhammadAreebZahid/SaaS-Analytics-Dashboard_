@@ -4,17 +4,6 @@ An interactive Business Intelligence dashboard built using **Power BI**, **Postg
 
 ---
 
-## Dashboard Preview
-
-### Executive Overview
-
-> *(Insert Executive Overview screenshot here)*
-
-### Customer Analytics
-
-> *(Insert Customer Analytics screenshot here)*
-
----
 
 # Project Overview
 
